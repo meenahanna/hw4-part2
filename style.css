@@ -1,0 +1,136 @@
+/*
+Name: Mena Hanna
+File: style.css
+Date: 11/27/2024
+GUI Assignment: Creating an Interactive Dynamic Table
+Mena Hanna, UMass Lowell Computer Science, mena_hanna@student.uml.edu
+Copyright (c) 2024 by Mena Hanna. All rights reserved. 
+May be freely copied or excerpted for educational purposes with credit to the author.
+
+Description:
+This CSS file provides styling for the HTML structure in `index.html`.
+It includes styles for the header, form, and the dynamically generated multiplication table.
+The form is styled to be user-friendly and includes input validation error messages.
+The multiplication table has alternating row colors for readability and custom styling for borders and layout.
+There are specific styles for table responsiveness, a checkerboard effect, and form input fields.
+*/
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Main Header Styling */
+.mainheader {
+    border-bottom: 5px solid rgb(234, 85, 5);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    letter-spacing: .8rem;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+#tableForm {
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#tableForm legend {
+    font-weight: bold;
+    font-style: italic;
+    color: #333;
+}
+
+#tableForm input[type="number"] {
+    border-radius: 0.25rem;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+#button-container {
+    text-align: center;
+}
+
+/* Centering the delete-tabs-button */
+#delete-tabs-button {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px; 
+}
+
+#add-tab-button {
+    width: 100%;
+    max-width: 600px; 
+}
+
+/* Ensuring both buttons are of equal height */
+#add-tab-button, #delete-tabs-button {
+    height: 50px;
+}
+
+
+
+/* Table Styling */
+.mytable {
+    margin-top: 20px;
+    width: auto;
+    border-collapse: collapse;
+}
+
+.mytable, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.mytable td, .mytable th {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+/* Checkerboard Effect */
+.mytable tr:nth-child(even) td:nth-child(odd),
+.mytable tr:nth-child(odd) td:nth-child(even) {
+    background-color: #ADD8E6;
+    color: black;
+}
+
+.mytable tr:nth-child(even) td:nth-child(even),
+.mytable tr:nth-child(odd) td:nth-child(odd) {
+    background-color: #024c7d;
+    color: white;
+}
+
+.no-border {
+    border: none;
+}
+
+/* Error Message Styling */
+.error-message {
+    display: none;
+    color: #B22222;
+    background-color: #FFE4E1;
+    border: 1px solid #B22222;
+    border-radius: 5px;
+    padding: 8px;
+    position: absolute;
+    left: 105%;
+    top: 0;
+    width: 200px;
+    font-size: 0.9em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for jQuery Validation Plugin error messages */
+label.error {
+    color: #B22222;
+    font-weight: bold;
+    margin-top: 5px;
+    display: block;
+}

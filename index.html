@@ -1,0 +1,106 @@
+<!--
+Name: Mena Hanna
+file: index.html
+Date: 11/27/2024
+GUI Assignment: Creating an Interactive Dynamic Table
+Mena Hanna, UMass Lowell Computer Science, mena_hanna@student.uml.edu
+Copyright (c) 2024 by Mena Hanna. All rights reserved.
+May be freely copied or excerpted for educational purposes with credit to the author.  
+
+Description:
+This HTML file creates the structure for the dynamic multiplication table web app. It includes an input form for users to specify the range of columns and rows,
+which is then used to generate multiplication tables. The generated tables are dynamically displayed in separate tabs for easy viewing and comparison.
+
+The HTML file features:
+- A (form input section) where users can specify the minimum and maximum values for columns and rows. This form includes sliders for easy value selection, synchronized with the input fields.
+- (Tabs for generated tables) to allow users to add multiple tables for side-by-side comparison. Each table is created in a new tab with a clear title indicating its input ranges.
+- (Dynamic tab management) that provides users the ability to delete selected tabs using checkboxes and a delete button for enhanced user control.
+- (Responsive design) using Bootstrap for styling, ensuring a user-friendly interface across different devices.
+
+The HTML is structured to work seamlessly with the JavaScript functionality, allowing users to interactively create and manage their multiplication tables.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Multiplication Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+    <header class="mainheader text-center my-4">
+        <h1 class="display-4">Dynamic Multiplication Table</h1>
+    </header>
+
+    <div class="container">
+        <div id="tabs">
+            <!-- Tab headers go here -->
+            <ul>
+                <li><a href="#tabs-1">Input Form</a></li>
+            </ul>
+
+            <!-- The input form as the first tab content -->
+            <div id="tabs-1">
+                <form id="form-container">
+                    <div id="min-col-group" class="form-group mb-3">
+                        <label for="min_col_value" class="form-label">Minimum Column Value:</label>
+                        <input type="text" name="min_col_value" id="min_col_value" required placeholder=" " class="form-control">
+                        <div id="min_col_slider" class="slider"></div>
+                    </div>
+
+                    <div id="max-col-group" class="form-group mb-3">
+                        <label for="max_col_value" class="form-label">Maximum Column Value:</label>
+                        <input type="text" name="max_col_value" id="max_col_value" required placeholder=" " class="form-control">
+                        <div id="max_col_slider" class="slider"></div>
+                    </div>
+
+                    <div id="min-row-group" class="form-group mb-3">
+                        <label for="min_row_value" class="form-label">Minimum Row Value:</label>
+                        <input type="text" name="min_row_value" id="min_row_value" required placeholder=" " class="form-control">
+                        <div id="min_row_slider" class="slider"></div>
+                    </div>
+
+                    <div id="max-row-group" class="form-group mb-3">
+                        <label for="max_row_value" class="form-label">Maximum Row Value:</label>
+                        <input type="text" name="max_row_value" id="max_row_value" required placeholder=" " class="form-control">
+                        <div id="max_row_slider" class="slider"></div>
+                    </div>
+
+                    <div id="button-container" class="button-container">
+                        <button type="button" id="add-tab-button" class="btn btn-success w-100">Add This Table to a Tab</button>
+                    </div>
+                </form>
+            </div>
+            <button type="button" id="delete-tabs-button" class="btn btn-danger mt-3">Delete Selected Tabs</button>
+
+            <!-- Tab for displaying the generated table content dynamically -->
+            <div class="row justify-content-center my-4">
+                <div class="col-auto">
+                    <div class="table-responsive">
+                        <div id="table-container" class="my-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center mt-4">
+        <p>&copy; Created By Mena Hanna</p>
+    </footer>
+
+    <!-- Load jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Load jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <!-- Load the jQuery Validation plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="script.js"></script>
+</body>
+</html>
